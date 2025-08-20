@@ -1,1 +1,300 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 0deg 0% 100%;
+    --foreground: 0deg 0% 8%;
+
+    --retro-black: 0deg 0% 4%;
+    --retro-dark: 0deg 0% 12%;
+    --retro-medium: 0deg 0% 45%;
+    --retro-light: 0deg 0% 85%;
+    --retro-white: 0deg 0% 98%;
+
+    --retro-accent: 120deg 100% 25%;
+    --retro-accent-light: 120deg 50% 85%;
+
+    --card: 0deg 0% 100%;
+    --card-foreground: 0deg 0% 8%;
+
+    --popover: 0deg 0% 100%;
+    --popover-foreground: 0deg 0% 8%;
+
+    --primary: 0deg 0% 4%;
+    --primary-foreground: 0deg 0% 98%;
+
+    --secondary: 0deg 0% 85%;
+    --secondary-foreground: 0deg 0% 8%;
+
+    --muted: 0deg 0% 92%;
+    --muted-foreground: 0deg 0% 45%;
+
+    --accent: 0deg 0% 92%;
+    --accent-foreground: 0deg 0% 8%;
+
+    --destructive: 0deg 84.2% 60.2%;
+    --destructive-foreground: 0deg 0% 98%;
+
+    --border: 0deg 0% 85%;
+    --input: 0deg 0% 85%;
+    --ring: 0deg 0% 8%;
+
+    --radius: 0.125rem;
+
+    --sidebar-background: 0deg 0% 98%;
+    --sidebar-foreground: 240deg 5.3% 26.1%;
+    --sidebar-primary: 240deg 5.9% 10%;
+    --sidebar-primary-foreground: 0deg 0% 98%;
+    --sidebar-accent: 240deg 4.8% 95.9%;
+    --sidebar-accent-foreground: 240deg 5.9% 10%;
+    --sidebar-border: 220deg 13% 91%;
+    --sidebar-ring: 217.2deg 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0deg 0% 4%;
+    --foreground: 0deg 0% 98%;
+
+    --retro-black: 0deg 0% 4%;
+    --retro-dark: 0deg 0% 12%;
+    --retro-medium: 0deg 0% 65%;
+    --retro-light: 0deg 0% 25%;
+    --retro-white: 0deg 0% 98%;
+
+    --retro-accent: 120deg 100% 50%;
+    --retro-accent-light: 120deg 50% 15%;
+
+    --card: 0deg 0% 4%;
+    --card-foreground: 0deg 0% 98%;
+
+    --popover: 0deg 0% 4%;
+    --popover-foreground: 0deg 0% 98%;
+
+    --primary: 0deg 0% 98%;
+    --primary-foreground: 0deg 0% 4%;
+
+    --secondary: 0deg 0% 12%;
+    --secondary-foreground: 0deg 0% 98%;
+
+    --muted: 0deg 0% 12%;
+    --muted-foreground: 0deg 0% 65%;
+
+    --accent: 0deg 0% 12%;
+    --accent-foreground: 0deg 0% 98%;
+
+    --destructive: 0deg 62.8% 30.6%;
+    --destructive-foreground: 0deg 0% 98%;
+
+    --border: 0deg 0% 12%;
+    --input: 0deg 0% 12%;
+    --ring: 0deg 0% 98%;
+    --sidebar-background: 240deg 5.9% 10%;
+    --sidebar-foreground: 240deg 4.8% 95.9%;
+    --sidebar-primary: 224.3deg 76.3% 48%;
+    --sidebar-primary-foreground: 0deg 0% 100%;
+    --sidebar-accent: 240deg 3.7% 15.9%;
+    --sidebar-accent-foreground: 240deg 4.8% 95.9%;
+    --sidebar-border: 240deg 3.7% 15.9%;
+    --sidebar-ring: 217.2deg 91.2% 59.8%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "Courier New", monospace;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Retro typography styles */
+  .retro-title {
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    font-family: "Courier New", monospace;
+    text-shadow: 2px 2px 0px hsl(var(--retro-dark));
+  }
+
+  @media (min-width: 768px) {
+    .retro-title {
+      font-size: 3.75rem; /* 60px */
+      line-height: 1;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .retro-title {
+      font-size: 4.5rem; /* 72px */
+      line-height: 1;
+    }
+  }
+
+  .retro-subtitle {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+    font-weight: 500;
+    font-family: "Courier New", monospace;
+  }
+
+  @media (min-width: 768px) {
+    .retro-subtitle {
+      font-size: 1.5rem; /* 24px */
+      line-height: 2rem; /* 32px */
+    }
+  }
+
+  .retro-body {
+    font-size: 1rem; /* 16px */
+    line-height: 1.75rem; /* 28px */
+    font-family: "Courier New", monospace;
+  }
+
+  /* Custom animations */
+  .typewriter {
+    overflow: hidden;
+    border-right: 2px solid hsl(var(--retro-accent));
+    white-space: nowrap;
+    animation: typewriter 4s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: hsl(var(--retro-accent));
+    }
+  }
+
+  .glitch {
+    position: relative;
+    animation: glitch 2s infinite;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch::before {
+    animation: glitch-1 0.5s infinite;
+    color: hsl(var(--retro-accent));
+    z-index: -1;
+  }
+
+  .glitch::after {
+    animation: glitch-2 0.5s infinite;
+    color: hsl(var(--retro-medium));
+    z-index: -2;
+  }
+
+  @keyframes glitch {
+    0%,
+    100% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+  }
+
+  @keyframes glitch-1 {
+    0% {
+      clip: rect(64px, 9999px, 66px, 0);
+    }
+    25% {
+      clip: rect(85px, 9999px, 140px, 0);
+    }
+    50% {
+      clip: rect(10px, 9999px, 15px, 0);
+    }
+    75% {
+      clip: rect(40px, 9999px, 80px, 0);
+    }
+    100% {
+      clip: rect(25px, 9999px, 30px, 0);
+    }
+  }
+
+  @keyframes glitch-2 {
+    0% {
+      clip: rect(65px, 9999px, 119px, 0);
+    }
+    25% {
+      clip: rect(52px, 9999px, 74px, 0);
+    }
+    50% {
+      clip: rect(79px, 9999px, 85px, 0);
+    }
+    75% {
+      clip: rect(75px, 9999px, 76px, 0);
+    }
+    100% {
+      clip: rect(67px, 9999px, 69px, 0);
+    }
+  }
+
+  /* Fade in animation */
+  .fade-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .fade-in-delayed {
+    animation: fadeInUp 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Retro hover effects */
+  .retro-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .retro-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0px hsl(var(--retro-dark));
+  }
+}
