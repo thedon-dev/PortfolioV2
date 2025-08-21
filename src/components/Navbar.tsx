@@ -10,7 +10,15 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "about", "projects", "gallery", "contact"];
+      const sections = [
+        "hero",
+        "about",
+        "experience",
+        "projects",
+        "gallery",
+        "contact",
+      ];
+
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -42,6 +50,7 @@ const Navbar = () => {
   const navItems = [
     { id: "hero", label: "HOME" },
     { id: "about", label: "ABOUT" },
+    { id: "experience", label: "EXPERIENCE" },
     { id: "projects", label: "PROJECTS" },
     { id: "gallery", label: "GALLERY" },
     { id: "contact", label: "CONTACT" },
@@ -64,7 +73,7 @@ const Navbar = () => {
                   onClick={() => scrollToSection(item.id)}
                   className={`font-retro text-sm tracking-wider transition-colors ${
                     activeSection === item.id
-                      ? "text-retro-accent border-b-2 border-retro-accent"
+                      ? "text-retro-accent border-b-2 border-retro-accent border-green-500"
                       : "text-foreground hover:text-retro-accent"
                   }`}
                 >

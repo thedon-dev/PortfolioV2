@@ -30,25 +30,30 @@ const Footer = () => {
               QUICK LINKS
             </h4>
             <nav className="space-y-2">
-              {["HOME", "ABOUT", "PROJECTS", "GALLERY", "CONTACT"].map(
-                (link) => (
-                  <button
-                    key={link}
-                    onClick={() => {
-                      const section =
-                        link.toLowerCase() === "home"
-                          ? "hero"
-                          : link.toLowerCase();
-                      document
-                        .getElementById(section)
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="block font-retro text-sm text-retro-medium hover:text-retro-accent transition-colors"
-                  >
-                    {link}
-                  </button>
-                )
-              )}
+              {[
+                "HOME",
+                "ABOUT",
+                "EXPERIENCE",
+                "PROJECTS",
+                "GALLERY",
+                "CONTACT",
+              ].map((link) => (
+                <button
+                  key={link}
+                  onClick={() => {
+                    const section =
+                      link.toLowerCase() === "home"
+                        ? "hero"
+                        : link.toLowerCase();
+                    document
+                      .getElementById(section)
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="cursor-pointer block font-retro text-sm text-retro-medium hover:text-retro-accent transition-colors"
+                >
+                  {link}
+                </button>
+              ))}
             </nav>
           </div>
 
@@ -59,7 +64,7 @@ const Footer = () => {
             </h4>
             <div className="flex space-x-4 mb-4">
               <a
-                href="https://github.com"
+                href="https://github.com/thedon-dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 border border-retro-medium hover:border-retro-accent hover:bg-retro-accent transition-all"
@@ -67,7 +72,7 @@ const Footer = () => {
                 <Github size={18} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/victorjackadokiye"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 border border-retro-medium hover:border-retro-accent hover:bg-retro-accent transition-all"
@@ -75,26 +80,25 @@ const Footer = () => {
                 <Linkedin size={18} />
               </a>
               <a
-                href="mailto:hello@portfolio.dev"
+                href="mailto:viktoh7351@gmail.com"
                 className="p-2 border border-retro-medium hover:border-retro-accent hover:bg-retro-accent transition-all"
               >
                 <Mail size={18} />
               </a>
             </div>
             <p className="font-retro text-xs text-retro-medium">
-              hello@portfolio.dev
+              viktoh7351@gmail.com
             </p>
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="border-t border-retro-dark pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="font-retro text-xs text-retro-medium">
               © {currentYear} PORTFOLIO.EXE - ALL RIGHTS RESERVED
             </p>
             <p className="font-retro text-xs text-retro-medium mt-1">
-              BUILT WITH REACT + TYPESCRIPT + TAILWIND CSS
+              BUILT WITH NEXTJS + TYPESCRIPT + TAILWIND CSS
             </p>
           </div>
 
@@ -106,8 +110,6 @@ const Footer = () => {
           </Button>
         </div>
       </div>
-
-      {/* Retro grid overlay */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div
           className="w-full h-full"

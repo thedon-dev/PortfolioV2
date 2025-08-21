@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/TextArea";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
@@ -14,12 +15,25 @@ import {
   Twitter,
 } from "lucide-react";
 
+type EmailJSResponse = {
+  status: number;
+  text: string;
+};
+
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({
+    type: null,
     message: "",
   });
   const sectionRef = useRef<HTMLElement>(null);
@@ -41,10 +55,44 @@ const Contact = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const result = (await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )) as EmailJSResponse;
+
+      if (result.status === 200) {
+        setSubmitStatus({
+          type: "success",
+          message: "Message sent successfully! I will get back to you soon.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "Failed to send message. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -60,19 +108,19 @@ const Contact = () => {
     {
       icon: <Mail size={24} />,
       title: "EMAIL",
-      value: "hello@portfolio.dev",
-      link: "mailto:hello@portfolio.dev",
+      value: "viktoh7351@gmail.com",
+      link: "mailto:viktoh7351@gmail.com",
     },
     {
       icon: <Phone size={24} />,
       title: "PHONE",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+234 (0) 905 7696 490",
+      link: "tel:+2349057696490",
     },
     {
       icon: <MapPin size={24} />,
       title: "LOCATION",
-      value: "San Francisco, CA",
+      value: "Port-Harcourt, Rivers State",
       link: "#",
     },
   ];
@@ -81,22 +129,26 @@ const Contact = () => {
     {
       icon: <Github size={24} />,
       name: "GITHUB",
-      url: "https://github.com",
+      url: "https://github.com/thedon-dev",
     },
     {
       icon: <Linkedin size={24} />,
       name: "LINKEDIN",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/victorjackadokiye",
     },
     {
       icon: <Twitter size={24} />,
       name: "TWITTER",
-      url: "https://twitter.com",
+      url: "https://twitter.com/prime_sui",
     },
   ];
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 px-4 bg-background">
+    <section
+      id="contact"
+      ref={sectionRef}
+      className="py-20 px-4 bg-retro-white"
+    >
       <div className="max-w-6xl mx-auto">
         <div className={`text-center mb-16 ${isVisible ? "fade-in" : ""}`}>
           <h2 className="retro-title text-foreground mb-4">CONTACT.EXE</h2>
@@ -177,12 +229,53 @@ const Contact = () => {
                   />
                 </div>
 
+                {submitStatus.message && (
+                  <div
+                    className={`p-4 border-2 font-retro text-sm ${
+                      submitStatus.type === "success"
+                        ? "border-green-500 bg-green-50 text-green-700"
+                        : "border-red-500 bg-red-50 text-red-700"
+                    }`}
+                  >
+                    {submitStatus.message}
+                  </div>
+                )}
+
                 <Button
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full retro-hover bg-retro-black text-retro-white hover:bg-retro-dark font-retro tracking-wider py-3"
                 >
-                  <Send size={18} className="mr-2" />
-                  SEND MESSAGE
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center">
+                      <svg
+                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                      </svg>
+                      SENDING...
+                    </span>
+                  ) : (
+                    <>
+                      <Send size={18} className="mr-2" />
+                      SEND MESSAGE
+                    </>
+                  )}
                 </Button>
               </form>
             </div>
@@ -247,7 +340,7 @@ const Contact = () => {
               </p>
               <p className="retro-body text-sm">
                 Currently accepting new projects and collaborations. Response
-                time: 24-48 hours.
+                time: immediately
               </p>
             </div>
           </div>

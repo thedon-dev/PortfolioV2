@@ -26,72 +26,55 @@ const Gallery = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Gallery items with different categories
+  // Update the categories
+  const categories = ["ALL", "EVENTS", "WORK", "TRAVEL", "HOBBIES", "SPEAKING"];
+
+  // Update the gallery items with your photos
   const galleryItems = [
     {
       id: 1,
-      category: "WEB DESIGN",
-      title: "MINIMAL.UI",
-      description: "Clean interface design",
+      category: "WORK",
+      title: "TECH.CONF",
+      description: "Speaking at a tech conference",
+      image: "/gallery/tech-conference.jpg", // Add your image path here
     },
     {
       id: 2,
-      category: "MOBILE APP",
-      title: "RETRO.MOBILE",
-      description: "iOS app design",
+      category: "EVENTS",
+      title: "HACKATHON.WIN",
+      description: "First place at local hackathon",
+      image: "/gallery/hackathon.jpg",
     },
     {
       id: 3,
-      category: "BRANDING",
-      title: "LOGO.SYSTEM",
-      description: "Brand identity",
+      category: "TRAVEL",
+      title: "CITY.EXPLORER",
+      description: "Weekend adventure in the city",
+      image: "/gallery/travel.jpg",
     },
     {
       id: 4,
-      category: "WEB DESIGN",
-      title: "DARK.THEME",
-      description: "Dark mode interface",
+      category: "HOBBIES",
+      title: "CODE.NIGHT",
+      description: "Late night coding session",
+      image: "/gallery/coding.jpg",
     },
     {
       id: 5,
-      category: "ILLUSTRATION",
-      title: "PIXEL.ART",
-      description: "Retro illustrations",
+      category: "SPEAKING",
+      title: "WORKSHOP.LEAD",
+      description: "Leading a dev workshop",
+      image: "/gallery/workshop.jpg",
     },
     {
       id: 6,
-      category: "PHOTOGRAPHY",
-      title: "URBAN.SHOTS",
-      description: "City photography",
-    },
-    {
-      id: 7,
-      category: "WEB DESIGN",
-      title: "GRID.SYSTEM",
-      description: "Layout experiments",
-    },
-    {
-      id: 8,
-      category: "BRANDING",
-      title: "TYPE.DESIGN",
-      description: "Custom typography",
-    },
-    {
-      id: 9,
-      category: "MOBILE APP",
-      title: "GESTURE.UI",
-      description: "Interaction design",
+      category: "WORK",
+      title: "TEAM.COLLAB",
+      description: "Collaborating with the team",
+      image: "/gallery/team.jpg",
     },
   ];
 
-  const categories = [
-    "ALL",
-    "WEB DESIGN",
-    "MOBILE APP",
-    "BRANDING",
-    "ILLUSTRATION",
-    "PHOTOGRAPHY",
-  ];
   const [activeCategory, setActiveCategory] = useState("ALL");
 
   const filteredItems =
@@ -100,11 +83,7 @@ const Gallery = () => {
       : galleryItems.filter((item) => item.category === activeCategory);
 
   return (
-    <section
-      id="gallery"
-      ref={sectionRef}
-      className="py-20 px-4 bg-retro-white"
-    >
+    <section id="gallery" ref={sectionRef} className="py-20 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className={`text-center mb-16 ${isVisible ? "fade-in" : ""}`}>
           <h2 className="retro-title text-retro-black mb-4">GALLERY.IMG</h2>
@@ -122,18 +101,26 @@ const Gallery = () => {
           }`}
         >
           {categories.map((category) => (
-            <Button
-              key={category}
+            // <Button
+            //   key={category}
+            //   onClick={() => setActiveCategory(category)}
+            //   variant={activeCategory === category ? "default" : "outline"}
+            //   className={`font-retro text-xs tracking-wider px-4 py-2 ${
+            //     activeCategory === category
+            //       ? "bg-retro-black text-retro-white"
+            //       : "border-retro-medium text-retro-dark hover:bg-retro-black hover:text-retro-white"
+            //   }`}
+            // >
+            //   {category}
+            // </Button>
+            <button
               onClick={() => setActiveCategory(category)}
-              variant={activeCategory === category ? "default" : "outline"}
-              className={`font-retro text-xs tracking-wider px-4 py-2 ${
-                activeCategory === category
-                  ? "bg-retro-black text-retro-white"
-                  : "border-retro-medium text-retro-dark hover:bg-retro-black hover:text-retro-white"
-              }`}
+              className={`${
+                activeCategory === category ? "bg-black text-white" : ""
+              } border rounded font-retro text-xs cursor-pointer tracking-wider px-4 py-2 border-retro-medium text-retro-dark hover:bg-retro-black hover:text-retro-white`}
             >
               {category}
-            </Button>
+            </button>
           ))}
         </div>
 
@@ -149,7 +136,15 @@ const Gallery = () => {
               onClick={() => setSelectedImage(item.id)}
             >
               <div className="relative aspect-square bg-retro-light border-2 border-retro-medium group-hover:border-retro-black transition-all duration-300 overflow-hidden">
-                {/* Placeholder Image */}
+                {/* Actual Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${item.image})`,
+                  }}
+                />
+
+                {/* Overlay with grid pattern */}
                 <div className="absolute inset-0 bg-gradient-to-br from-retro-medium/30 to-retro-dark/30" />
 
                 {/* Category Badge */}

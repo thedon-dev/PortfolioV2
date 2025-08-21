@@ -98,6 +98,75 @@
     --sidebar-ring: 217.2deg 91.2% 59.8%;
   }
 
+  @layer utilities {
+    /* Create utility classes for your custom colors */
+    .bg-retro-black {
+      background-color: hsl(var(--retro-black));
+    }
+    .bg-retro-dark {
+      background-color: hsl(var(--retro-dark));
+    }
+    .bg-retro-medium {
+      background-color: hsl(var(--retro-medium));
+    }
+    .bg-retro-light {
+      background-color: hsl(var(--retro-light));
+    }
+    .bg-retro-white {
+      background-color: hsl(var(--retro-white));
+    }
+    .bg-retro-accent {
+      background-color: hsl(var(--retro-accent));
+    }
+    .bg-retro-accent-light {
+      background-color: hsl(var(--retro-accent-light));
+    }
+
+    .text-retro-black {
+      color: hsl(var(--retro-black));
+    }
+    .text-retro-dark {
+      color: hsl(var(--retro-dark));
+    }
+    .text-retro-medium {
+      color: hsl(var(--retro-medium));
+    }
+    .text-retro-light {
+      color: hsl(var(--retro-light));
+    }
+    .text-retro-white {
+      color: hsl(var(--retro-white));
+    }
+    .text-retro-accent {
+      color: hsl(var(--retro-accent));
+    }
+    .text-retro-accent-light {
+      color: hsl(var(--retro-accent-light));
+    }
+
+    .border-retro-black {
+      border-color: hsl(var(--retro-black));
+    }
+    .border-retro-dark {
+      border-color: hsl(var(--retro-dark));
+    }
+    .border-retro-medium {
+      border-color: hsl(var(--retro-medium));
+    }
+    .border-retro-light {
+      border-color: hsl(var(--retro-light));
+    }
+    .border-retro-white {
+      border-color: hsl(var(--retro-white));
+    }
+    .border-retro-accent {
+      border-color: hsl(var(--retro-accent));
+    }
+    .border-retro-accent-light {
+      border-color: hsl(var(--retro-accent-light));
+    }
+  }
+
   * {
     border-color: hsl(var(--border));
   }
@@ -115,10 +184,9 @@
 }
 
 @layer components {
-  /* Retro typography styles */
   .retro-title {
-    font-size: 2.25rem; /* 36px */
-    line-height: 2.5rem; /* 40px */
+    font-size: 2.25rem;
+    line-height: 2.5rem;
     font-weight: 700;
     letter-spacing: -0.025em;
     font-family: "Courier New", monospace;
@@ -127,39 +195,38 @@
 
   @media (min-width: 768px) {
     .retro-title {
-      font-size: 3.75rem; /* 60px */
+      font-size: 3.75rem;
       line-height: 1;
     }
   }
 
   @media (min-width: 1024px) {
     .retro-title {
-      font-size: 4.5rem; /* 72px */
+      font-size: 4.5rem;
       line-height: 1;
     }
   }
 
   .retro-subtitle {
-    font-size: 1.25rem; /* 20px */
-    line-height: 1.75rem; /* 28px */
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     font-weight: 500;
     font-family: "Courier New", monospace;
   }
 
   @media (min-width: 768px) {
     .retro-subtitle {
-      font-size: 1.5rem; /* 24px */
-      line-height: 2rem; /* 32px */
+      font-size: 1.5rem;
+      line-height: 2rem;
     }
   }
 
   .retro-body {
-    font-size: 1rem; /* 16px */
-    line-height: 1.75rem; /* 28px */
+    font-size: 1rem;
+    line-height: 1.75rem;
     font-family: "Courier New", monospace;
   }
 
-  /* Custom animations */
   .typewriter {
     overflow: hidden;
     border-right: 2px solid hsl(var(--retro-accent));

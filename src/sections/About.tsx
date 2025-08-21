@@ -1,7 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Code, Palette, Database, Globe } from "lucide-react";
+import {
+  Code,
+  Palette,
+  Database,
+  Globe,
+  Phone,
+  Smartphone,
+} from "lucide-react";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,34 +41,35 @@ const About = () => {
     {
       icon: <Database size={32} />,
       title: "BACKEND",
-      description: "Node.js, Python, PostgreSQL, MongoDB",
+      description: "Node.js, Express.js, MongoDB",
       details: "Scalable server-side applications and APIs",
     },
     {
-      icon: <Palette size={32} />,
-      title: "DESIGN",
-      description: "UI/UX, Figma, Adobe Creative Suite",
-      details: "User-centered design and visual communication",
+      icon: <Smartphone size={32} />,
+      title: "MOBILE APPLICATIONS",
+      description: "ReactNative, Expo",
+      details:
+        "Building cross-platform mobile experiences with native performance",
     },
     {
       icon: <Globe size={32} />,
       title: "DEPLOYMENT",
-      description: "AWS, Docker, Vercel, CI/CD",
+      description: "AWS, Docker, Vercel, CI/CD, Github",
       details: "Automated deployment and cloud infrastructure",
     },
   ];
 
   return (
-    <section id="about" ref={sectionRef} className="py-20 px-4 bg-retro-white">
+    <section id="about" ref={sectionRef} className="py-20 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
         <div className={`text-center mb-16 ${isVisible ? "fade-in" : ""}`}>
           <h2 className="retro-title text-retro-black mb-4">ABOUT.TXT</h2>
           <div className="w-24 h-1 bg-retro-accent mx-auto mb-8"></div>
           <p className="retro-body text-retro-dark max-w-3xl mx-auto text-lg leading-relaxed">
-            I'm a passionate full-stack developer with a love for creating
-            digital experiences that matter. My journey in tech started with
-            curiosity and has evolved into a commitment to building solutions
-            that bridge creativity and functionality.
+            I'm a passionate software developer with a love for creating digital
+            experiences that matter. My journey in tech started with curiosity
+            and has evolved into a commitment to building softwares and
+            solutions that bridge creativity and functionality.
           </p>
         </div>
 

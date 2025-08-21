@@ -1,5 +1,7 @@
 "use client";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
@@ -22,8 +24,28 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const nameText = document.querySelector(".scrollingText");
+
+    gsap.to(nameText, {
+      y: 600,
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+  }, []);
+
   const scrollToAbout = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToProjects = () => {
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -46,33 +68,43 @@ const Hero = () => {
             <p className="retro-subtitle text-retro-medium mb-2">
               &gt; FULL STACK DEVELOPER
             </p>
-            <p className="retro-body text-retro-medium max-w-2xl mx-auto">
+            {/* <p className="retro-body text-retro-medium max-w-2xl mx-auto">
               Creating digital experiences with clean code and creative
               solutions. Specializing in modern web technologies and
               user-centered design.
+            </p> */}
+            <p className="retro-body text-retro-medium max-w-2xl mx-auto">
+              Hi, my name is{" "}
+              <span className="bg-black p-1 text-white">Victor Jack</span>, I am
+              a software Engineer, a true definition of a Philomath and a Tech
+              addict. I strive to bring innovative ideas to life. My goal is to
+              craft seamless digital experiences that not only meet but exceed
+              client expectations.
             </p>
           </div>
         </div>
 
         <div className="fade-in-delayed space-y-6">
           <div className="flex flex-wrap justify-center gap-4">
-            <Button
-              onClick={scrollToAbout}
-              className="retro-hover bg-retro-black text-retro-white hover:bg-retro-dark font-retro tracking-wider px-8 py-3"
+            <button
+              onClick={() => scrollToProjects()}
+              className="bg-black text-sm text-white h-10 rounded retro-hover bg-retro-black text-retro-white hover:bg-retro-dark font-retro tracking-wider px-8 py-3"
             >
-              VIEW PROJECTS
-            </Button>
+              VIEW PROJCETS
+            </button>
             <Button
               variant="outline"
               className="retro-hover border-2 border-retro-black text-retro-black hover:bg-retro-black hover:text-retro-white font-retro tracking-wider px-8 py-3"
             >
-              DOWNLOAD CV
+              <a href="" download>
+                DOWNLOAD CV
+              </a>
             </Button>
           </div>
 
           <div className="flex justify-center space-x-6">
             <a
-              href="https://github.com"
+              href="https://github.com/thedon-dev"
               target="_blank"
               rel="noopener noreferrer"
               className="retro-hover p-3 border-2 border-retro-medium hover:border-retro-black hover:bg-retro-black hover:text-retro-white transition-all"
@@ -80,7 +112,7 @@ const Hero = () => {
               <Github size={24} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/victorjackadokiye"
               target="_blank"
               rel="noopener noreferrer"
               className="retro-hover p-3 border-2 border-retro-medium hover:border-retro-black hover:bg-retro-black hover:text-retro-white transition-all"
@@ -88,7 +120,7 @@ const Hero = () => {
               <Linkedin size={24} />
             </a>
             <a
-              href="mailto:hello@example.com"
+              href="mailto:viktoh7351@gmail.com"
               className="retro-hover p-3 border-2 border-retro-medium hover:border-retro-black hover:bg-retro-black hover:text-retro-white transition-all"
             >
               <Mail size={24} />
@@ -117,6 +149,9 @@ const Hero = () => {
           }}
         />
       </div>
+      <p className="scrollingText tracking-[0.5rem] lg:tracking-[5rem] opacity-25 retro-title font-semibold uppercase absolute bottom-24">
+        Victor Jack
+      </p>
     </section>
   );
 };

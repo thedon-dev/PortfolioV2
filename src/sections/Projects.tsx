@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,40 +28,47 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "E-COMMERCE.APP",
+      title: "SPA-BOOKING.WEB",
       category: "FULLSTACK",
       description:
-        "Modern e-commerce platform with real-time inventory, payment integration, and advanced analytics dashboard.",
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
+        "A web application that streamlines spa appointment scheduling for both customers and spa administrators.",
+      tech: ["React", "Node.js", "MongoDB", "Express"],
       status: "LIVE",
-      image: "/placeholder-project-1.jpg",
+      image: "/Spa-Booking.png",
+      githubLink: "https://github.com/thedon-dev/salon_site",
+      liveLink: "https://salon-site-lilac.vercel.app",
     },
     {
-      title: "TASK.MANAGER",
+      title: "BLOG.WEB",
       category: "FRONTEND",
       description:
-        "Collaborative project management tool with drag-and-drop functionality and team communication features.",
-      tech: ["Next.js", "TypeScript", "Tailwind", "Supabase"],
+        "blog website where users can read blogs. The blogs are gotten from gnews api",
+      tech: ["Next.js", "TypeScript", "Tailwind", "Gnext API"],
+      status: "BETA",
+      image: "/iBLOG.png",
+      githubLink: "https://github.com/thedon-dev/blog",
+      liveLink: "iblog.pxxl.live",
+    },
+    {
+      title: "E-COMMERCE.WEP",
+      category: "FULLSTACK",
+      description: "An e-commerce store for customized stickers",
+      tech: ["NextJS", "TailwindCSS", "MongoDB"],
       status: "DEVELOPMENT",
-      image: "/placeholder-project-2.jpg",
+      image: "/stickernator.png",
+      githubLink: "",
+      liveLink: "",
     },
     {
-      title: "PORTFOLIO.CMS",
-      category: "BACKEND",
-      description:
-        "Headless CMS for creative professionals with media management and API-first architecture.",
-      tech: ["Python", "FastAPI", "MongoDB", "AWS"],
-      status: "LIVE",
-      image: "/placeholder-project-3.jpg",
-    },
-    {
-      title: "RETRO.GAMES",
+      title: "CAFE.WEB",
       category: "CREATIVE",
       description:
-        "Browser-based retro game collection with leaderboards and social features for classic arcade games.",
-      tech: ["JavaScript", "Canvas API", "Socket.io", "Redis"],
+        "A website for a cafe to showcase what they do, events and promote their products",
+      tech: ["React", "TailwindCSS"],
       status: "BETA",
-      image: "/placeholder-project-4.jpg",
+      image: "/cafe-site.png",
+      githubLink: "https://github.com/thedon-dev/cafe_site",
+      liveLink: "https://cafe-site-cyan.vercel.app",
     },
   ];
 
@@ -89,9 +97,26 @@ const Projects = () => {
               }`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              {/* Project Image Placeholder */}
-              <div className="h-48 bg-retro-light border-b-2 border-retro-medium relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-retro-black/20 to-transparent" />
+              <div
+                style={{
+                  backgroundImage: `url(${project.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+                className="h-48 bg-retro-light border-b-2 border-retro-medium relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-black/30" />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage: `
+        linear-gradient(rgba(0,0,0,0.2) 1px, transparent 1px), 
+        linear-gradient(90deg, rgba(0,0,0,0.2) 1px, transparent 1px)
+      `,
+                    backgroundSize: "20px 20px",
+                  }}
+                />
                 <div className="absolute top-4 right-4">
                   <span
                     className={`px-3 py-1 text-xs font-retro tracking-wider ${
@@ -107,11 +132,11 @@ const Projects = () => {
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="w-16 h-16 border-4 border-retro-dark bg-retro-white mx-auto mb-2 flex items-center justify-center">
+                    {/* <div className="w-16 h-16 border-4 border-retro-dark bg-retro-white mx-auto mb-2 flex items-center justify-center">
                       <span className="font-retro text-xs">
                         {project.category}
                       </span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -139,36 +164,48 @@ const Projects = () => {
                   </div>
                 </div>
 
-                <div className="flex space-x-3">
-                  <Button
-                    size="sm"
-                    className="flex-1 bg-retro-black text-retro-white hover:bg-retro-dark font-retro text-xs tracking-wider"
+                <div className="flex space-x-3 items-center">
+                  <Link
+                    href={project.githubLink}
+                    className="flex-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <Github size={14} className="mr-2" />
-                    CODE
-                  </Button>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="flex-1 border-retro-dark text-retro-dark hover:bg-retro-dark hover:text-retro-white font-retro text-xs tracking-wider"
+                    <button className="cursor-pointer text-white flex font-retro text-xs bg-black tracking-wider flex-1 p-2 border border-retro-dark rounded w-full justify-center">
+                      <Github size={14} className="mr-2" />
+                      CODE
+                    </button>
+                  </Link>
+
+                  <Link
+                    href={project.liveLink}
+                    className="flex-1 w-full"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <ExternalLink size={14} className="mr-2" />
-                    DEMO
-                  </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="w-full flex-1 border-retro-dark text-retro-dark hover:bg-retro-dark hover:text-retro-white font-retro text-xs tracking-wider"
+                    >
+                      <ExternalLink size={14} className="mr-2" />
+                      DEMO
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div
+        {/* <div
           className={`text-center mt-12 ${isVisible ? "fade-in-delayed" : ""}`}
         >
           <Button className="retro-hover bg-transparent border-2 border-retro-accent text-retro-accent hover:bg-retro-accent hover:text-retro-white font-retro tracking-wider px-8 py-3">
             VIEW ALL PROJECTS
             <ArrowRight size={18} className="ml-2" />
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
