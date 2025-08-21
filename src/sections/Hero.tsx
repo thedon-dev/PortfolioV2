@@ -30,7 +30,7 @@ const Hero = () => {
     const nameText = document.querySelector(".scrollingText");
 
     gsap.to(nameText, {
-      y: 600,
+      y: 100,
       scrollTrigger: {
         trigger: "#hero",
         start: "top top",

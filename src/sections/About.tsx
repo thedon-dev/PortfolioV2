@@ -1,14 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import {
-  Code,
-  Palette,
-  Database,
-  Globe,
-  Phone,
-  Smartphone,
-} from "lucide-react";
+import { Code, Database, Globe, Smartphone } from "lucide-react";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);

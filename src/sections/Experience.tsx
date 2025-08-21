@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Briefcase, Calendar, MapPin, ArrowRight } from "lucide-react";
+import { Briefcase, Calendar, MapPin } from "lucide-react";
 
 const Experience = () => {
   const [isVisible, setIsVisible] = useState(false);
