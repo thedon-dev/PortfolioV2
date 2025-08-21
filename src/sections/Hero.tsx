@@ -96,7 +96,7 @@ const Hero = () => {
               variant="outline"
               className="retro-hover border-2 border-retro-black text-retro-black hover:bg-retro-black hover:text-retro-white font-retro tracking-wider px-8 py-3"
             >
-              <a href="" download>
+              <a href="/VictorJack.pdf" download>
                 DOWNLOAD CV
               </a>
             </Button>
