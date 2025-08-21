@@ -90,7 +90,7 @@ const Hero = () => {
               onClick={() => scrollToProjects()}
               className="bg-black text-sm text-white h-10 rounded retro-hover bg-retro-black text-retro-white hover:bg-retro-dark font-retro tracking-wider px-8 py-3"
             >
-              VIEW PROJCETS
+              VIEW PROJECTS
             </button>
             <Button
               variant="outline"
