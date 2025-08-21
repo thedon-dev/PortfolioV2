@@ -15,7 +15,7 @@ const Navbar = () => {
         "about",
         "experience",
         "projects",
-        "gallery",
+        // "gallery",
         "contact",
       ];
 
@@ -52,7 +52,7 @@ const Navbar = () => {
     { id: "about", label: "ABOUT" },
     { id: "experience", label: "EXPERIENCE" },
     { id: "projects", label: "PROJECTS" },
-    { id: "gallery", label: "GALLERY" },
+    // { id: "gallery", label: "GALLERY" },
     { id: "contact", label: "CONTACT" },
   ];
 
