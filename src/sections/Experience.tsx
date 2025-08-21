@@ -74,7 +74,7 @@ const Experience = () => {
             >
               <div className="absolute left-4 md:left-1/2 w-6 h-6 bg-retro-accent rounded-full border-4 border-retro-white transform -translate-x-1/2 z-10"></div>
               <div
-                className={`ml-12 md:ml-0 md:w-1/2 ${
+                className={`ml-[15px] md:ml-0 mt-3 md:w-1/2 ${
                   index % 2 === 0 ? "md:pr-12" : "md:pl-12"
                 }`}
               >
@@ -91,7 +91,7 @@ const Experience = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center text-retro-medium text-sm mb-4">
+                  <div className="flex  flex-col gap-2 lg:gap-0 lg:flex-row lg:items-center text-retro-medium text-sm mb-4">
                     <div className="flex items-center mr-4">
                       <Calendar size={16} className="mr-1" />
                       {exp.period}
@@ -126,10 +126,11 @@ const Experience = () => {
           className={`mt-16 text-center ${isVisible ? "fade-in-delayed" : ""}`}
         >
           <div className="bg-retro-black text-retro-white p-8 border-4 border-retro-dark inline-block">
-            <p className="font-retro text-lg mb-4">
-              &gt; TOTAL EXPERIENCE: 2 YEARS
+            <p className="font-retro lg:text-lg mb-4">
+              &gt; TOTAL EXPERIENCE:{" "}
+              <span className="text-green-500">2 YEARS</span>
             </p>
-            <p className="retro-body">
+            <p className="retro-body text-xs lg:text-base">
               Continuously learning and evolving with technology
             </p>
           </div>

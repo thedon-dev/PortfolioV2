@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import { LenisProvider } from "@/components/LenisProvider";
 import Navbar from "@/components/Navbar";
 import About from "@/sections/About";
 import Contact from "@/sections/Contact";
@@ -10,14 +11,16 @@ import Projects from "@/sections/Projects";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      {/* <Gallery /> */}
-      <Contact />
-      <Footer />
+      <LenisProvider>
+        <Navbar />
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        {/* <Gallery /> */}
+        <Contact />
+        <Footer />
+      </LenisProvider>
     </div>
   );
 }

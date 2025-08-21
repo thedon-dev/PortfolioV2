@@ -50,7 +50,7 @@ const Projects = () => {
       liveLink: "iblog.pxxl.live",
     },
     {
-      title: "E-COMMERCE.WEP",
+      title: "E-COMMERCE.WEB",
       category: "FULLSTACK",
       description: "An e-commerce store for customized stickers",
       tech: ["NextJS", "TailwindCSS", "MongoDB"],

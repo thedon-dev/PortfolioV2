@@ -93,10 +93,13 @@ const About = () => {
           className={`mt-16 text-center ${isVisible ? "fade-in-delayed" : ""}`}
         >
           <div className="bg-retro-black text-retro-white p-8 border-4 border-retro-dark inline-block">
-            <p className="font-retro text-lg mb-4">
-              &gt; CURRENT STATUS: AVAILABLE FOR PROJECTS
+            <p className="font-retro lg:text-lg mb-4">
+              &gt; CURRENT STATUS:{" "}
+              <span className="text-retro-accent text-green-500">
+                AVAILABLE FOR PROJECTS
+              </span>
             </p>
-            <p className="retro-body">
+            <p className="retro-body text-xs lg:text-base">
               Ready to collaborate on your next big idea
             </p>
           </div>
