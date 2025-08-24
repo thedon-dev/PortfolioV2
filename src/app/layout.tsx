@@ -4,7 +4,7 @@ import { EmailJsProvider } from "@/components/EmailJsProvider";
 import { LenisProvider } from "@/components/LenisProvider";
 
 export const metadata: Metadata = {
-  title: "Victor Jack | Portfolio",
+  title: "Victor Jack | Software Engineer",
   description:
     "Victor Jack is a Software Engineer specialized in building exceptional digital experiences",
   keywords:
