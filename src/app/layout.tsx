@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     apple: "/portfolioHero.png",
   },
   openGraph: {
-    title: "Victor Jack | Portfolio",
+    title: "Victor Jack | Software Engineer",
     description:
       "Software Engineer specialized in building exceptional digital experiences",
     url: "https://victorjack.pxxl.live",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Victor Jack | Portfolio",
+    title: "Victor Jack | Software Engineer",
     description:
       "Software Engineer specialized in building exceptional digital experiences",
     creator: "@prime_sui",
