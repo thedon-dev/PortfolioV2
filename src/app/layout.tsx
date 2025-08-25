@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { EmailJsProvider } from "@/components/EmailJsProvider";
 import { LenisProvider } from "@/components/LenisProvider";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: "Victor Jack | Software Engineer",
@@ -50,6 +51,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <GoogleAnalytics
+          GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!}
+        />
+      </head>
       <body>
         <EmailJsProvider />
         {children}
