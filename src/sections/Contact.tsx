@@ -85,7 +85,7 @@ const Contact = () => {
           message: "",
         });
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: "error",
         message: "Failed to send message. Please try again.",
@@ -154,8 +154,8 @@ const Contact = () => {
           <h2 className="retro-title text-foreground mb-4">CONTACT.EXE</h2>
           <div className="w-24 h-1 bg-retro-accent mx-auto mb-8"></div>
           <p className="retro-body text-retro-medium max-w-3xl mx-auto text-lg">
-            Ready to collaborate on your next project? Let's connect and build
-            something amazing together.
+            Ready to collaborate on your next project? Let&apos;s connect and
+            build something amazing together.
           </p>
         </div>
 

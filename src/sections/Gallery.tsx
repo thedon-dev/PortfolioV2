@@ -114,6 +114,7 @@ const Gallery = () => {
             //   {category}
             // </Button>
             <button
+              key={category}
               onClick={() => setActiveCategory(category)}
               className={`${
                 activeCategory === category ? "bg-black text-white" : ""

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { EmailJsProvider } from "@/components/EmailJsProvider";
-import { LenisProvider } from "@/components/LenisProvider";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {

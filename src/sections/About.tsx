@@ -59,10 +59,10 @@ const About = () => {
           <h2 className="retro-title text-retro-black mb-4">ABOUT.TXT</h2>
           <div className="w-24 h-1 bg-retro-accent mx-auto mb-8"></div>
           <p className="retro-body text-retro-dark max-w-3xl mx-auto text-lg leading-relaxed">
-            I'm a passionate software developer with a love for creating digital
-            experiences that matter. My journey in tech started with curiosity
-            and has evolved into a commitment to building softwares and
-            solutions that bridge creativity and functionality.
+            I&apos;m a passionate software developer with a love for creating
+            digital experiences that matter. My journey in tech started with
+            curiosity and has evolved into a commitment to building softwares
+            and solutions that bridge creativity and functionality.
           </p>
         </div>
 
