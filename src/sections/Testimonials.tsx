@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Quote } from "lucide-react";
+import { Quote, TextQuote } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -36,7 +36,7 @@ const Testimonials = () => {
 
     const scroller = scrollerRef.current;
     let animationFrameId: number;
-    let speed = 1;
+    const speed = 1;
 
     const scroll = () => {
       if (
@@ -121,7 +121,7 @@ const Testimonials = () => {
                     <Quote size={20} />
                   </div>
                   <p className="retro-body text-sm text-retro-dark mb-6 italic">
-                    "{testimonial.content}"
+                    {testimonial.content}
                   </p>
                   <div>
                     <h3 className="font-retro font-bold text-retro-black">
