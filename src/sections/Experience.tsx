@@ -2,10 +2,16 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Briefcase, Calendar, MapPin } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Experience = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,20 +34,43 @@ const Experience = () => {
     {
       company: "Silicon Delta Innovation Hub",
       position: "Software Engineer",
-      period: "2024 - 2025",
+      period: "July, 2024 - July, 2025",
       location: "Port-Harcourt, Rivers State",
       description:
-        "Developed responsive user interfaces for client projects. Collaborated with UX designers to implement pixel-perfect designs.",
-      technologies: ["React", "Next.js", "Tailwind CSS", "ReactNative", "Expo"],
+        "Developed responsive user interfaces for clients and in-house projects. Collaborated with UX designers to implement pixel-perfect designs.",
+      technologies: [
+        "ReactJS",
+        "Next.js",
+        "Tailwind CSS",
+        "ReactNative",
+        "Expo",
+      ],
     },
     {
       company: "Let's Build Labs",
       position: "FrontEnd Developer",
-      period: "2025 - Present",
+      period: "Feb, 2025 - Present",
       location: "Remote",
       description:
         "Led development of scalable web3 applications using NextJS. Implemented CI/CD pipelines reducing deployment time by 40%.",
-      technologies: ["NextJS", "TypeScript"],
+      technologies: ["NextJS", "TypeScript", "Firebase", "Github Actions"],
+    },
+    {
+      company: "Kleeth Technologies",
+      position: "FrontEnd Developer",
+      period: "May, 2025 - Present",
+      location: "Port-Harcourt, Rivers State",
+      description:
+        "Led frontend development for cross-platform mobile and web applications, ensuring high-quality user experiences. Oversaw the entire deployment process, implementing and managing CI/CD pipelines to automate and accelerate application delivery.",
+      technologies: [
+        "ReactJS",
+        "NextJS",
+        "TypeScript",
+        "Tailwindcss",
+        "ReactNative",
+        "Expo",
+        "Hostinger",
+      ],
     },
   ];
 
@@ -67,6 +96,7 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div
               key={index}
+              data-aos={index % 2 !== 0 ? "fade-left" : "fade-right"}
               className={`relative flex flex-col md:flex-row ${
                 index % 2 === 0 ? "md:flex-row-reverse" : ""
               } ${isVisible ? "fade-in" : ""}`}
@@ -122,13 +152,11 @@ const Experience = () => {
           ))}
         </div>
 
-        <div
-          className={`mt-16 text-center ${isVisible ? "fade-in-delayed" : ""}`}
-        >
+        <div className="mt-16 text-center" data-aos="fade-in">
           <div className="bg-retro-black text-retro-white p-8 border-4 border-retro-dark inline-block">
             <p className="font-retro lg:text-lg mb-4">
               &gt; TOTAL EXPERIENCE:{" "}
-              <span className="text-green-500">2 YEARS</span>
+              <span className="text-green-500">3 YEARS</span>
             </p>
             <p className="retro-body text-xs lg:text-base">
               Continuously learning and evolving with technology

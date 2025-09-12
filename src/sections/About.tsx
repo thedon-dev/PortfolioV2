@@ -47,7 +47,7 @@ const About = () => {
     {
       icon: <Globe size={32} />,
       title: "DEPLOYMENT",
-      description: "AWS, Docker, Vercel, CI/CD, Github, Pxxl",
+      description: "Docker, Vercel, CI/CD, Github, Pxxl",
       details: "Automated deployment and cloud infrastructure",
     },
   ];

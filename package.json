@@ -12,6 +12,7 @@
     "@emailjs/browser": "^4.4.1",
     "@studio-freight/lenis": "^1.0.42",
     "@vercel/analytics": "^1.5.0",
+    "aos": "^2.3.4",
     "framer-motion": "^12.22.0",
     "gsap": "^3.13.0",
     "lucide-react": "^0.540.0",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
