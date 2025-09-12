@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Star, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
