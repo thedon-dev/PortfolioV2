@@ -57,19 +57,36 @@ const Experience = () => {
     },
     {
       company: "Kleeth Technologies",
-      position: "FrontEnd Developer",
+      position: "FrontEnd Engineer",
       period: "May, 2025 - Present",
       location: "Port-Harcourt, Rivers State",
       description:
         "Led frontend development for cross-platform mobile and web applications, ensuring high-quality user experiences. Oversaw the entire deployment process, implementing and managing CI/CD pipelines to automate and accelerate application delivery.",
       technologies: [
-        "ReactJS",
         "NextJS",
         "TypeScript",
         "Tailwindcss",
         "ReactNative",
         "Expo",
         "Hostinger",
+        "Github Actions",
+      ],
+    },
+    {
+      company: "Baanza App",
+      position: "FrontEnd Engineer",
+      period: "",
+      location: "Port-Harcourt, Rivers State",
+      description:
+        "I was responsible for building and maintaining the user interface for both the web and mobile application. I developed responsive, high-performance frontends using ReactJS, Next.js, and React Native. Additionally, I handled the deployment and release processes for all applications, setting up CI/CD pipelines and managing deployments to web and mobile platforms to ensure smooth, reliable delivery.",
+      technologies: [
+        "NextJS",
+        "TypeScript",
+        "Tailwindcss",
+        "ReactNative",
+        "Expo",
+        "Nativewind",
+        "Github Actions",
       ],
     },
   ];
@@ -156,7 +173,7 @@ const Experience = () => {
           <div className="bg-retro-black text-retro-white p-8 border-4 border-retro-dark inline-block">
             <p className="font-retro lg:text-lg mb-4">
               &gt; TOTAL EXPERIENCE:{" "}
-              <span className="text-green-500">3 YEARS</span>
+              <span className="text-green-500">3 YEARS+</span>
             </p>
             <p className="retro-body text-xs lg:text-base">
               Continuously learning and evolving with technology
