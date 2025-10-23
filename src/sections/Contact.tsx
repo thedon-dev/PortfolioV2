@@ -14,6 +14,7 @@ import {
   Linkedin,
   Twitter,
 } from "lucide-react";
+import { BsTwitterX } from "react-icons/bs";
 
 type EmailJSResponse = {
   status: number;
@@ -55,44 +56,60 @@ const Contact = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+  //   setSubmitStatus({ type: null, message: "" });
+
+  //   try {
+  //     const result = (await emailjs.send(
+  //       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+  //       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+  //       {
+  //         from_name: formData.name,
+  //         from_email: formData.email,
+  //         subject: formData.subject,
+  //         message: formData.message,
+  //       },
+  //       process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+  //     )) as EmailJSResponse;
+
+  //     if (result.status === 200) {
+  //       setSubmitStatus({
+  //         type: "success",
+  //         message: "Message sent successfully! I will get back to you soon.",
+  //       });
+  //       setFormData({
+  //         name: "",
+  //         email: "",
+  //         subject: "",
+  //         message: "",
+  //       });
+  //     }
+  //   } catch {
+  //     setSubmitStatus({
+  //       type: "error",
+  //       message: "Failed to send message. Please try again.",
+  //     });
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: "" });
 
-    try {
-      const result = (await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      )) as EmailJSResponse;
+    const { name, email, subject, message } = formData;
 
-      if (result.status === 200) {
-        setSubmitStatus({
-          type: "success",
-          message: "Message sent successfully! I will get back to you soon.",
-        });
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
-      }
-    } catch {
-      setSubmitStatus({
-        type: "error",
-        message: "Failed to send message. Please try again.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    const mailtoLink = `mailto:viktoh7351@gmail.com?subject=${encodeURIComponent(
+      subject || "Project Inquiry"
+    )}&body=${encodeURIComponent(
+      `Hi Victor,\n\n${message}\n\nFrom: ${name} (${email})`
+    )}`;
+
+    window.location.href = mailtoLink;
+
+    setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
   const handleChange = (
@@ -126,6 +143,11 @@ const Contact = () => {
   ];
 
   const socialLinks = [
+    {
+      icon: <BsTwitterX size={24} />,
+      name: "X (F.K.A Twitter)",
+      url: "https://x.com/prime_sui",
+    },
     {
       icon: <Github size={24} />,
       name: "GITHUB",
@@ -314,7 +336,7 @@ const Contact = () => {
                 SOCIAL LINKS
               </h3>
 
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-4 gap-4">
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}

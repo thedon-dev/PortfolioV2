@@ -4,7 +4,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Mail } from "lucide-react";
+import { BsTwitterX } from "react-icons/bs";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
@@ -104,12 +106,20 @@ const Hero = () => {
 
           <div className="flex justify-center space-x-6">
             <a
+              href="https://x.com/prime_sui"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="retro-hover p-3 border-2 border-retro-medium hover:border-retro-black hover:bg-retro-black hover:text-retro-white transition-all"
+            >
+              <BsTwitterX size={24} />
+            </a>
+            <a
               href="https://github.com/thedon-dev"
               target="_blank"
               rel="noopener noreferrer"
               className="retro-hover p-3 border-2 border-retro-medium hover:border-retro-black hover:bg-retro-black hover:text-retro-white transition-all"
             >
-              <Github size={24} />
+              <FaGithub size={24} />
             </a>
             <a
               href="https://www.linkedin.com/in/victorjackadokiye"
@@ -117,7 +127,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="retro-hover p-3 border-2 border-retro-medium hover:border-retro-black hover:bg-retro-black hover:text-retro-white transition-all"
             >
-              <Linkedin size={24} />
+              <FaLinkedin size={24} />
             </a>
             <a
               href="mailto:viktoh7351@gmail.com"

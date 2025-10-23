@@ -47,8 +47,35 @@ const About = () => {
     {
       icon: <Globe size={32} />,
       title: "DEPLOYMENT",
-      description: "Docker, Vercel, CI/CD, Github, Pxxl",
+      description: "Hostinger, Vercel, CI/CD, Github/Github Actions, Pxxl",
       details: "Automated deployment and cloud infrastructure",
+    },
+  ];
+
+  const techStack = [
+    { name: "React", icon: "https://cdn.simpleicons.org/react" },
+    { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript" },
+    { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs" },
+    { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs" },
+    { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript" },
+    { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb" },
+    { name: "Bootstrap", icon: "https://cdn.simpleicons.org/bootstrap" },
+    { name: "Tailwind", icon: "https://cdn.simpleicons.org/tailwindcss" },
+    { name: "Hero UI", icon: "https://cdn.simpleicons.org/heroui" },
+    { name: "Expo", icon: "https://cdn.simpleicons.org/expo" },
+    { name: "Express", icon: "https://cdn.simpleicons.org/express" },
+    { name: "Git", icon: "https://cdn.simpleicons.org/git" },
+    {
+      name: "GitHub Actions",
+      icon: "https://cdn.simpleicons.org/githubactions",
+    },
+    {
+      name: "Hostinger",
+      icon: "https://cdn.simpleicons.org/hostinger",
+    },
+    {
+      name: "Postman",
+      icon: "https://cdn.simpleicons.org/postman",
     },
   ];
 
@@ -66,7 +93,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {skills.map((skill, index) => (
             <div
               key={skill.title}
@@ -88,6 +115,54 @@ const About = () => {
             </div>
           ))}
         </div>
+        <div className={`my-16 ${isVisible ? "fade-in-delayed" : ""}`}>
+          <div className="relative overflow-hidden">
+            <div className="absolute left-0 top-0 w-36 lg:w-64 h-full bg-gradient-to-r from-white via-white to-transparent z-10"></div>
+
+            <div className="absolute right-0 top-0 w-36 lg:w-64 h-full bg-gradient-to-l from-white via-white to-transparent z-10"></div>
+
+            <div className="flex space-x-8 marquee-container">
+              <div className="flex space-x-8 marquee-content flex-shrink-0">
+                {techStack.map((tech, index) => (
+                  <div
+                    key={`${tech.name}-1`}
+                    className="flex items-center space-x-3 bg-retro-white border-2 border-retro-medium p-3 retro-hover"
+                  >
+                    <img
+                      src={tech.icon}
+                      alt="skill icon"
+                      width={100}
+                      height={100}
+                      className="w-[30px] h-[30px]"
+                    />
+                    {/* <span className="font-retro text-retro-black text-xs tracking-wide">
+                      {tech.name}
+                    </span> */}
+                  </div>
+                ))}
+              </div>
+              <div className="flex space-x-8 marquee-content flex-shrink-0">
+                {techStack.map((tech, index) => (
+                  <div
+                    key={`${tech.name}-2`}
+                    className="flex items-center space-x-3 bg-retro-white border-2 border-retro-medium p-3 retro-hover"
+                  >
+                    <img
+                      src={tech.icon}
+                      alt="skill icon"
+                      width={100}
+                      height={100}
+                      className="w-[30px] h-[30px]"
+                    />
+                    {/* <span className="font-retro text-retro-black text-xs tracking-wide">
+                      {tech.name}
+                    </span> */}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div
           className={`mt-16 text-center ${isVisible ? "fade-in-delayed" : ""}`}
@@ -105,6 +180,38 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .marquee-container {
+          animation: marquee 30s linear infinite;
+          width: max-content;
+        }
+
+        .marquee-content {
+          display: flex;
+          align-items: center;
+        }
+
+        .marquee-container:hover {
+          animation-play-state: paused;
+        }
+
+        /* Pause animation when reduced motion is preferred */
+        @media (prefers-reduced-motion: reduce) {
+          .marquee-container {
+            animation: none;
+          }
+        }
+      `}</style>
     </section>
   );
 };
