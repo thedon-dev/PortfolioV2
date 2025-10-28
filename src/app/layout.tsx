@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { EmailJsProvider } from "@/components/EmailJsProvider";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import WhatsAppButton from "@/components/WhatsappButton";
 
 export const metadata: Metadata = {
   title: "Victor Jack | Software Engineer",
@@ -58,6 +59,7 @@ export default function RootLayout({
       <body>
         <EmailJsProvider />
         {children}
+        <WhatsAppButton phoneNumber="9057696490" />
       </body>
     </html>
   );
