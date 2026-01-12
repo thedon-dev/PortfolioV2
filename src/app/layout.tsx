@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   keywords:
     "Software Engineer, Portfolio, Victor Jack, Web Developer in Nigeria, Software Engineer Portfolio",
   authors: [{ name: "Victor Jack" }],
-  metadataBase: new URL("https://victorjack.pxxl.live"),
+  metadataBase: new URL("https://victorjack.vercel.app"),
   icons: {
     icon: "/portfolioHero.png",
     shortcut: "/portfolioHero.png",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Victor Jack | Software Engineer",
     description:
       "Software Engineer specialized in building exceptional digital experiences",
-    url: "https://victorjack.pxxl.live",
+    url: "https://victorjack.vercel.app",
     siteName: "Victor Jack Portfolio",
     images: [
       {
