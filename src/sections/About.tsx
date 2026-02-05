@@ -14,7 +14,7 @@ const About = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -123,7 +123,7 @@ const About = () => {
 
             <div className="flex space-x-8 marquee-container">
               <div className="flex space-x-8 marquee-content flex-shrink-0">
-                {techStack.map((tech, index) => (
+                {techStack.map((tech) => (
                   <div
                     key={`${tech.name}-1`}
                     className="flex items-center space-x-3 bg-retro-white border-2 border-retro-medium p-3 retro-hover"
@@ -142,7 +142,7 @@ const About = () => {
                 ))}
               </div>
               <div className="flex space-x-8 marquee-content flex-shrink-0">
-                {techStack.map((tech, index) => (
+                {techStack.map((tech) => (
                   <div
                     key={`${tech.name}-2`}
                     className="flex items-center space-x-3 bg-retro-white border-2 border-retro-medium p-3 retro-hover"

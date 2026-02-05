@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/TextArea";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
@@ -16,10 +16,10 @@ import {
 } from "lucide-react";
 import { BsTwitterX } from "react-icons/bs";
 
-type EmailJSResponse = {
-  status: number;
-  text: string;
-};
+// type EmailJSResponse = {
+//   status: number;
+//   text: string;
+// };
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,8 +29,8 @@ const Contact = () => {
     subject: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
+  const [isSubmitting, _setSubmitting] = useState(false);
+  const [submitStatus, _setSubmitStatus] = useState<{
     type: "success" | "error" | null;
     message: string;
   }>({
@@ -46,7 +46,7 @@ const Contact = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -102,9 +102,9 @@ const Contact = () => {
     const { name, email, subject, message } = formData;
 
     const mailtoLink = `mailto:viktoh7351@gmail.com?subject=${encodeURIComponent(
-      subject || "Project Inquiry"
+      subject || "Project Inquiry",
     )}&body=${encodeURIComponent(
-      `Hi Victor,\n\n${message}\n\nFrom: ${name} (${email})`
+      `Hi Victor,\n\n${message}\n\nFrom: ${name} (${email})`,
     )}`;
 
     window.location.href = mailtoLink;
@@ -113,7 +113,7 @@ const Contact = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
