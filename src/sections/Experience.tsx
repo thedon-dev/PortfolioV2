@@ -20,7 +20,7 @@ const Experience = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -32,28 +32,20 @@ const Experience = () => {
 
   const experiences = [
     {
-      company: "Silicon Delta Innovation Hub",
-      position: "Software Engineer",
-      period: "July, 2024 - July, 2025",
+      company: "Royler Voucher",
+      position: "Mobile App Engineer & Developer Support",
+      period: "",
       location: "Port-Harcourt, Rivers State",
       description:
-        "Developed responsive user interfaces for clients and in-house projects. Collaborated with UX designers to implement pixel-perfect designs.",
+        "Engineered cross-platform web and mobile applications with React, Next.js, and React Native, focusing on performance and scalability. Integrated and managed API consumption for dynamic data handling across both platforms. Led deployment workflows, successfully publishing and maintaining applications on the Play Store and App Store.",
       technologies: [
         "ReactJS",
-        "Next.js",
-        "Tailwind CSS",
-        "ReactNative",
+        "TypeScript",
+        "Tailwindcss",
+        "React Native",
         "Expo",
+        "Nativewind",
       ],
-    },
-    {
-      company: "Let's Build Labs",
-      position: "FrontEnd Developer",
-      period: "Feb, 2025 - Present",
-      location: "Remote",
-      description:
-        "Led development of scalable web3 applications using NextJS. Implemented CI/CD pipelines reducing deployment time by 40%.",
-      technologies: ["NextJS", "TypeScript", "Firebase", "Github Actions"],
     },
     {
       company: "Kleeth Technologies",
@@ -86,7 +78,30 @@ const Experience = () => {
         "ReactNative",
         "Expo",
         "Nativewind",
-        "Github Actions",
+      ],
+    },
+    {
+      company: "Let's Build Labs",
+      position: "FrontEnd Developer",
+      period: "Feb, 2025 - August, 2025",
+      location: "Remote",
+      description:
+        "Led development of scalable web3 applications using NextJS. Implemented CI/CD pipelines reducing deployment time by 40%.",
+      technologies: ["NextJS", "TypeScript", "Firebase", "Github Actions"],
+    },
+    {
+      company: "Silicon Delta Innovation Hub",
+      position: "Software Engineer",
+      period: "July, 2024 - July, 2025",
+      location: "Port-Harcourt, Rivers State",
+      description:
+        "Developed responsive user interfaces for clients and in-house projects. Collaborated with UX designers to implement pixel-perfect designs.",
+      technologies: [
+        "ReactJS",
+        "Next.js",
+        "Tailwind CSS",
+        "ReactNative",
+        "Expo",
       ],
     },
   ];
@@ -173,7 +188,7 @@ const Experience = () => {
           <div className="bg-retro-black text-retro-white p-8 border-4 border-retro-dark inline-block">
             <p className="font-retro lg:text-lg mb-4">
               &gt; TOTAL EXPERIENCE:{" "}
-              <span className="text-green-500">3 YEARS+</span>
+              <span className="text-green-500">4 YEARS</span>
             </p>
             <p className="retro-body text-xs lg:text-base">
               Continuously learning and evolving with technology

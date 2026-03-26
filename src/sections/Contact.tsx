@@ -14,7 +14,7 @@ import {
   Linkedin,
   Twitter,
 } from "lucide-react";
-import { BsTwitterX } from "react-icons/bs";
+import { BsInstagram, BsTwitterX } from "react-icons/bs";
 
 // type EmailJSResponse = {
 //   status: number;
@@ -159,9 +159,9 @@ const Contact = () => {
       url: "https://www.linkedin.com/in/victorjackadokiye",
     },
     {
-      icon: <Twitter size={24} />,
-      name: "TWITTER",
-      url: "https://twitter.com/prime_sui",
+      icon: <BsInstagram size={24} />,
+      name: "INSTAGRAM",
+      url: "https://www.instagram.com/victorwritescode",
     },
   ];
 
