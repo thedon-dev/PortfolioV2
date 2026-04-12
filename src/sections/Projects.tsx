@@ -16,7 +16,7 @@ const Projects = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -27,6 +27,30 @@ const Projects = () => {
   }, []);
 
   const projects = [
+    {
+      title: "ONSITE",
+      category: "FULLSTACK",
+      description:
+        "A construction management system that helps on-field workers log their day-to-day activities on the go.",
+      tech: ["NextJS", "Expo (React Native)", "Hostinger"],
+      status: "LIVE",
+      image: "/onsite.png",
+      githubLink: "",
+      liveLink: "https://onsite.kleeth.io",
+      showCode: false,
+    },
+    {
+      title: "ROYLER VOUCHER",
+      category: "MOBILE",
+      description:
+        "An app that lets users buy and send vouchers to people that can be redeemed at partner locations.",
+      tech: ["Expo", "Nativewind", "Bycrypt"],
+      status: "LIVE",
+      image: "/royler-voucher.png",
+      githubLink: "",
+      liveLink: "https://apps.apple.com/ng/app/royler-voucher/id6761020976",
+      showCode: false,
+    },
     {
       title: "SPA-BOOKING.WEB",
       category: "FULLSTACK",
@@ -58,6 +82,7 @@ const Projects = () => {
       image: "/stickernator.png",
       githubLink: "",
       liveLink: "",
+      showCode: false,
     },
     {
       title: "CAFE.WEB",
@@ -123,8 +148,8 @@ const Projects = () => {
                       project.status === "LIVE"
                         ? "bg-retro-accent text-retro-white"
                         : project.status === "DEVELOPMENT"
-                        ? "bg-retro-medium text-retro-white"
-                        : "bg-retro-dark text-retro-white"
+                          ? "bg-retro-medium text-retro-white"
+                          : "bg-retro-dark text-retro-white"
                     }`}
                   >
                     {project.status}
@@ -165,21 +190,27 @@ const Projects = () => {
                 </div>
 
                 <div className="flex space-x-3 items-center">
-                  <Link
-                    href={project.githubLink}
-                    className="flex-1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <button className="cursor-pointer text-white flex font-retro text-xs bg-black tracking-wider flex-1 p-2 border border-retro-dark rounded w-full justify-center">
-                      <Github size={14} className="mr-2" />
-                      CODE
-                    </button>
-                  </Link>
+                  {project.showCode !== false && project.githubLink && (
+                    <Link
+                      href={project.githubLink}
+                      className="flex-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <button className="cursor-pointer text-white flex font-retro text-xs bg-black tracking-wider flex-1 p-2 border border-retro-dark rounded w-full justify-center">
+                        <Github size={14} className="mr-2" />
+                        CODE
+                      </button>
+                    </Link>
+                  )}
 
                   <Link
                     href={project.liveLink}
-                    className="flex-1 w-full"
+                    className={
+                      project.showCode === false || !project.githubLink
+                        ? "w-full"
+                        : "flex-1 w-full"
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                   >

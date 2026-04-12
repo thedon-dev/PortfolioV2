@@ -50,7 +50,7 @@ const Experience = () => {
     {
       company: "Kleeth Technologies",
       position: "FrontEnd Engineer",
-      period: "May, 2025 - Present",
+      period: "",
       location: "Port-Harcourt, Rivers State",
       description:
         "Led frontend development for cross-platform mobile and web applications, ensuring high-quality user experiences. Oversaw the entire deployment process, implementing and managing CI/CD pipelines to automate and accelerate application delivery.",
@@ -83,7 +83,7 @@ const Experience = () => {
     {
       company: "Let's Build Labs",
       position: "FrontEnd Developer",
-      period: "Feb, 2025 - August, 2025",
+      period: "",
       location: "Remote",
       description:
         "Led development of scalable web3 applications using NextJS. Implemented CI/CD pipelines reducing deployment time by 40%.",
@@ -92,7 +92,7 @@ const Experience = () => {
     {
       company: "Silicon Delta Innovation Hub",
       position: "Software Engineer",
-      period: "July, 2024 - July, 2025",
+      period: "",
       location: "Port-Harcourt, Rivers State",
       description:
         "Developed responsive user interfaces for clients and in-house projects. Collaborated with UX designers to implement pixel-perfect designs.",
