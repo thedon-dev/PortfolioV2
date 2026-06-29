@@ -28,6 +28,18 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "Wall Of Rejection",
+      category: "FULLSTACK",
+      description:
+        "A community-driven platform where people share rejection emails from jobs, internships, grants, and opportunities to normalize rejection, inspire resilience, and celebrate the journeys that eventually lead to success.",
+      tech: ["NextJS", "ExpressJS", "MongoDB", "PXXL"],
+      status: "LIVE",
+      image: "/wallofrejection.png",
+      githubLink: "",
+      liveLink: "https://wall-of-rejection.pxxl.run",
+      showCode: false,
+    },
+    {
       title: "ONSITE",
       category: "FULLSTACK",
       description:
