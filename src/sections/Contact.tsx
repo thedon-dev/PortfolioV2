@@ -356,7 +356,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-retro-black text-retro-white p-6 border-4 border-retro-dark">
+            {/* <div className="bg-retro-black text-retro-white p-6 border-4 border-retro-dark">
               <p className="font-retro text-sm mb-2">
                 &gt; STATUS: AVAILABLE FOR WORK
               </p>
@@ -364,7 +364,7 @@ const Contact = () => {
                 Currently accepting new projects and collaborations. Response
                 time: immediately
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

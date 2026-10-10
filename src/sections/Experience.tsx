@@ -32,6 +32,22 @@ const Experience = () => {
 
   const experiences = [
     {
+      company: "ClassroomIO",
+      position: "Software Engineer",
+      period: "",
+      location: "Port-Harcourt, Rivers State",
+      description:
+        "Designed, developed, and maintained features for ClassroomIO's education platform, contributing to both frontend and backend development. Built responsive user interfaces with Svelte and Tailwind CSS, developed backend services and APIs using Hono, and managed database operations with PostgreSQL and Drizzle ORM. Collaborated on feature implementation, application reliability, and code quality to deliver scalable and maintainable software.",
+      technologies: [
+        "Svelte",
+        "Hono",
+        "Tailwind",
+        "Storybook",
+        "PostgreSQL",
+        "Drizzle ORM",
+      ],
+    },
+    {
       company: "Royler Voucher",
       position: "Mobile App Engineer & Developer Support",
       period: "",
@@ -62,22 +78,6 @@ const Experience = () => {
         "Expo",
         "Hostinger",
         "Github Actions",
-      ],
-    },
-    {
-      company: "Baanza App",
-      position: "FrontEnd Engineer",
-      period: "",
-      location: "Port-Harcourt, Rivers State",
-      description:
-        "I was responsible for building and maintaining the user interface for both the web and mobile application. I developed responsive, high-performance frontends using ReactJS, Next.js, and React Native. Additionally, I handled the deployment and release processes for all applications, setting up CI/CD pipelines and managing deployments to web and mobile platforms to ensure smooth, reliable delivery.",
-      technologies: [
-        "NextJS",
-        "TypeScript",
-        "Tailwindcss",
-        "ReactNative",
-        "Expo",
-        "Nativewind",
       ],
     },
     {

@@ -28,13 +28,13 @@ const About = () => {
     {
       icon: <Code size={32} />,
       title: "FRONTEND",
-      description: "React, TypeScript, Next.js, Tailwind CSS",
+      description: "Svelte, React, TypeScript, Next.js, Tailwind CSS",
       details: "Building responsive and interactive user interfaces",
     },
     {
       icon: <Database size={32} />,
       title: "BACKEND",
-      description: "Node.js, Express.js, MongoDB",
+      description: "Hono, Node.js, Express.js, MongoDB, PostgreSQL",
       details: "Scalable server-side applications and APIs",
     },
     {
@@ -56,9 +56,12 @@ const About = () => {
     { name: "React", icon: "https://cdn.simpleicons.org/react" },
     { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript" },
     { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs" },
+    { name: "Hono", icon: "https://cdn.simpleicons.org/hono" },
     { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs" },
     { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript" },
     { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb" },
+    { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql" },
+    { name: "Mongoose", icon: "https://cdn.simpleicons.org/mongoose" },
     { name: "Bootstrap", icon: "https://cdn.simpleicons.org/bootstrap" },
     { name: "Tailwind", icon: "https://cdn.simpleicons.org/tailwindcss" },
     { name: "Hero UI", icon: "https://cdn.simpleicons.org/heroui" },
